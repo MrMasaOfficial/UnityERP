@@ -1,0 +1,11 @@
+*.pyc
+__pycache__/
+*.db
+*.pdf
+invoices/
+purchase_orders/
+reports/
+.venv/
+venv/
+.env
+.DS_Store
