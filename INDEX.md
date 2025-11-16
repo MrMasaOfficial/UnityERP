@@ -4,8 +4,7 @@
 
 | Item | Details |
 
-|--------|----------|
-
+|------|--------|--------|
 | **Project Name** | Integrated ERP System |
 
 | **Current Version** | 2.0 |
@@ -246,3 +245,4 @@ python main.py
 | `UPDATES.md` | Technical Update Details |
 
 |
+
