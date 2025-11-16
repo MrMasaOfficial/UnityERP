@@ -1,55 +1,69 @@
-# ملاحظات التطوير
+# Development Notes
 
-## الأوامر المهمة
+## Important Commands
 
-### تثبيت المكتبات
+### Install Libraries
 ```bash
 pip install -r requirements.txt
 ```
 
-### إضافة البيانات الأولية
+### Add Seed Data
 ```bash
 python seed_data.py
 ```
 
-### تشغيل التطبيق
+### Run the Application
 ```bash
 python main.py
 ```
 
-## المشاريع التالية
+## Next Projects
 
-1. **نظام المستخدمين والصلاحيات**
-   - إضافة جدول users مع كلمات سرية مشفرة
-   - إضافة نظام الصلاحيات (Admin, Accountant, Store Manager, etc)
-   - تسجيل الدخول والخروج
+1. **Users and Permissions System**
 
-2. **تحسينات المخزون**
-   - إضافة دعم التسلسل الهرمي للفئات
-   - نظام الحجوزات (Reservations)
-   - تتبع تواريخ الصلاحية
+- Add a users table with encrypted passwords
 
-3. **تحسينات المبيعات**
-   - نظام الفواتير المتكررة
-   - نظام الدفع بالأقساط
-   - تتبع المدفوعات
+- Add a permissions system (Admin, Accountant, Store Manager, etc.)
 
-4. **تحسينات الحسابات**
-   - نظام القيود (Journal Entries)
-   - التقارير المالية المتقدمة
-   - دعم الضرائب المتعددة
+- Login and Logout
 
-5. **تحسينات التقارير**
-   - تقارير ديناميكية قابلة للتخصيص
-   - تصدير Excel
-   - الرسوم البيانية والإحصائيات
+2. **Inventory Improvements**
 
-## المشاكل المعروفة
+- Add support for category hierarchies
 
-- التقارير تحتاج إلى المزيد من الخيارات المتقدمة
-- نظام البحث بحاجة إلى تحسين
+- Reservations system
 
-## الملاحظات الأخرى
+- Track expiration dates
 
-- استخدام SQLite مناسب للتطبيقات الصغيرة والمتوسطة
-- للتطبيقات الكبيرة، استخدم PostgreSQL أو MySQL
+3. **Sales Improvements**
+
+- Recurring Invoice System
+
+- Installment Payment System
+
+- Payment Tracking
+
+4. **Accounting Improvements**
+
+- Journal Entries System
+
+- Advanced Financial Reports
+
+- Multi-Tax Support
+
+5. **Reporting Improvements**
+
+- Dynamic reports Customization
+
+- Excel Export
+
+- Charts and Statistics
+
+## Known Issues
+
+- Reports need more advanced options
+- Search system needs improvement
+
+## Other Notes
+
+- SQLite is suitable for small and medium-sized applications. For large applications, use PostgreSQL or MySQL.
