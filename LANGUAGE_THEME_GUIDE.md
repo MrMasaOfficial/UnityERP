@@ -1,154 +1,198 @@
-# دليل اللغات والمواضيع
+# Language and Theme Guide
 
-## نظرة عامة
+## Overview
 
-تم إضافة دعم كامل للغات والمواضيع (Dark/Light Mode) للتطبيق:
+Full language and theme support (Dark/Light Mode) has been added to the app:
 
-- **اللغات المدعومة**: العربية (AR) والإنجليزية (EN)
-- **المواضيع المدعومة**: وضع نهاري (Light) ووضع ليلي (Dark)
-- **حفظ الإعدادات**: يتم حفظ تفضيلات المستخدم تلقائياً
+- **Supported Languages**: Arabic (AR) and English (EN)
 
-## استخدام التطبيق
+- **Supported Themes**: Day Mode (Light) and Night Mode (Dark)
+- **Save Settings**: User preferences are saved automatically
 
-### 1. البدء الأول
+## Using the App
 
-عند تشغيل التطبيق لأول مرة:
-- اللغة الافتراضية: **العربية**
-- المظهر الافتراضي: **وضع نهاري (Light)**
+### 1. First Launch
 
-### 2. الوصول إلى الإعدادات
+When you launch the app for the first time:
 
-1. في النافذة الرئيسية، اذهب إلى قائمة **Settings** في الأعلى
-2. اختر **Settings** من القائمة المنسدلة
-3. ستظهر نافذة الإعدادات
+- Default Language: **Arabic**
 
-### 3. تغيير اللغة
+- Default Theme: **Day Mode (Light)**
 
-في نافذة الإعدادات:
-1. اختر اللغة المرغوبة من قائمة **Language**:
-   - **العربية** (Arabic)
-   - **English** (الإنجليزية)
-2. اضغط **Save**
-3. سيتم تحديث واجهة التطبيق تلقائياً
+### 2. Accessing Settings
 
-### 4. تغيير المظهر
+1. In the main window, go to the **Settings** menu at the top.
 
-في نافذة الإعدادات:
-1. اختر المظهر المرغوب من قائمة **Theme**:
-   - **Light Mode** (الوضع النهاري)
-   - **Dark Mode** (الوضع الليلي)
-2. اضغط **Save**
-3. سيتم تطبيق المظهر الجديد على الفور
+2. Select **Settings** from the drop-down menu.
 
-### 5. حفظ الإعدادات
+3. The settings window will appear.
 
-- يتم حفظ جميع الإعدادات تلقائياً في ملف `app_settings.json`
-- عند إغلاق التطبيق وإعادة تشغيله، ستكون إعداداتك محفوظة
+### 3. Changing the Language
 
-## الملفات الرئيسية
+In the settings window:
+
+1. Select the desired language from the **Language** list:
+
+- **Arabic**
+
+- **English**
+
+2. Tap **Save**
+
+3. The app will update Automatically configure the app interface
+
+### 4. Change the appearance
+
+In the settings window:
+
+1. Select the desired theme from the **Theme** list:
+
+- **Light Mode** (Daytime Mode)
+
+- **Dark Mode** (Night Mode)
+
+2. Click **Save**
+
+3. The new theme will be applied immediately
+
+### 5. Save settings
+
+- All settings are automatically saved in the `app_settings.json` file.
+- Your settings will be saved when you close and restart the app.
+
+## Main files
 
 ### `translations.py`
-يحتوي على جميع النصوص بـ العربية والإنجليزية
+Contains all text in Arabic and English
 
-**الاستخدام**:
+**Usage**:
+
 ```python
 from translations import t
 
-label = QLabel(t('name'))  # يظهر "الاسم" بالعربية أو "Name" بالإنجليزية
+label = QLabel(t('name')) # Displays "Name" in Arabic or "Name" in English
+
 ```
 
 ### `themes.py`
-يدير المواضيع والألوان
+Manages themes and colors
 
-**الاستخدام**:
+**Usage**:
+
 ```python
 from themes import get_stylesheet, set_theme
 
 set_theme('dark')
 app.setStyleSheet(get_stylesheet())
+
 ```
 
 ### `settings.py`
-يدير حفظ واستعادة الإعدادات
+Manages saving and restoring settings
 
-**الاستخدام**:
+**Usage**:
+
 ```python
 from settings import settings_manager
 
-lang = settings_manager.get_language()  # 'ar' أو 'en'
+lang = settings_manager.get_language() # 'ar' or 'en'
 settings_manager.set_language('en')
+
 ```
 
-## ملف الإعدادات (`app_settings.json`)
+## Settings file (`app_settings.json`)
 
-يتم حفظ الإعدادات في هذا الملف:
+Settings are saved in this file:
 
 ```json
 {
-  "language": "ar",
-  "theme": "light",
-  "window_geometry": null,
-  "window_state": null
+"language": "ar",
+
+"theme": "light",
+
+"window_geometry": null,
+
+"window_state": null
 }
+
 ```
 
-## المفاتيح المترجمة الرئيسية
+## Main translated keys
 
-| المفتاح | العربية | الإنجليزية |
+| Key | Arabic | English |
+
 |---------|---------|-----------|
-| title | نظام ERP المتكامل | Integrated ERP System |
-| inventory | المخزون | Inventory |
-| sales | المبيعات | Sales |
-| add | إضافة | Add |
-| edit | تعديل | Edit |
-| delete | حذف | Delete |
-| save | حفظ | Save |
-| success | نجاح | Success |
-| error | خطأ | Error |
 
-## الألوان والأنماط
+| title | Integrated ERP System |
 
-### الوضع النهاري (Light Mode)
-- الخلفية: أبيض (#ffffff)
-- النصوص: أسود (#000000)
-- الأزرار: أزرق غامق (#1f4788)
+| inventory | Inventory |
 
-### الوضع الليلي (Dark Mode)
-- الخلفية: رمادي غامق جداً (#1e1e1e)
-- النصوص: رمادي فاتح (#e0e0e0)
-- الأزرار: أزرق متوسط (#2a5fa0)
+| sales | Sales |
 
-## إضافة لغات جديدة
+| add | Add |
 
-لإضافة لغة جديدة (مثل الفرنسية):
+| edit | Edit |
 
-1. افتح ملف `translations.py`
-2. أضف لغة جديدة في قاموس `TRANSLATIONS`:
+| delete | Delete |
+
+| save | Save |
+
+| success | Success |
+
+| error | Error |
+
+## Colors and Styles
+
+### Light Mode
+- Background: White (#ffffff)
+- Text: Black (#000000)
+- Buttons: Dark Blue (#1f4788)
+
+### Dark Mode
+- Background: Very Dark Gray (#1e1e1e)
+- Text: Light Gray (#e0e0e0)
+- Buttons: Medium Blue (#2a5fa0)
+
+## Adding New Languages
+
+To add a new language (e.g., French):
+
+1. Open the `translations.py` file
+
+2. Add a new language to the `TRANSLATIONS` dictionary:
 
 ```python
 TRANSLATIONS = {
-    'ar': { ... },
-    'en': { ... },
-    'fr': {  # إضافة الفرنسية
-        'title': 'Système ERP intégré',
-        'inventory': 'Inventaire',
-        # ... إلخ
-    }
+'ar': { ... },
+
+'en': { ... },
+
+'fr': { # Add French
+'title': 'Système ERP intégré',
+
+'inventory': 'Inventaire',
+
+# ... etc.
+
+}
 }
 ```
 
-3. أضف الخيار في نافذة الإعدادات (في `main.py`)
+3. Add the option in the settings window (in `main.py`)
 
-## نصائح وملاحظات
+## Tips and Notes
 
-1. **النصوص المدمجة**: يجب استخدام `t()` لكل نص يظهر للمستخدم
-2. **الأداء**: النظام محسّن ولا يؤثر على الأداء
-3. **التوافق**: يعمل مع جميع منصات Windows و Linux و macOS
-4. **التخصيص**: يمكن تعديل الألوان والأنماط في ملف `themes.py`
+1. **Merged Scripts**: Use `t()` for all text displayed to the user.
 
-## الخطوات القادمة المقترحة
+2. **Performance**: The system is optimized and does not affect performance.
 
-- تحديث جميع ملفات UI الأخرى (sales, purchasing, accounting, reports)
-- إضافة لغات إضافية
-- إضافة مواضيع مخصصة أكثر
-- دعم توجيه RTL (Right-to-Left) كامل للعربية
+3. **Compatibility**: Works with all Windows, Linux, and macOS platforms.
+
+4. **Customization**: Colors and styles can be modified in the `themes.py` file.
+
+## Suggested Next Steps
+
+- Update all other UI files (sales, purchasing, accounting, reports)
+- Add additional languages
+- Add more custom themes
+- Full RTL (Right-to-Left) support for Arabic
