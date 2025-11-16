@@ -2,7 +2,7 @@
 
 ## Project Information
 
-| Item | Details |
+| File | Description | Time |
 
 |------|--------|--------|
 | **Project Name** | Integrated ERP System |
@@ -245,4 +245,5 @@ python main.py
 | `UPDATES.md` | Technical Update Details |
 
 |
+
 
